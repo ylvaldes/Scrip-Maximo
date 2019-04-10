@@ -62,7 +62,7 @@ try:
         errorgroup = "UTD_GENERICException"
         error = True 
             
-except (MXException, MXApplicationException, RemoteException, Exception)+ e:
+except (MXException, MXApplicationException, RemoteException, Exception), e:
     logger.error("Error: Error: Scrip WF_PT_E4")
     logger.error(e)
     params=["Ocurrio un error a la hora de procesar el ScriptError: Scrip WF_PT_E4 \n" + str(e.getMessage())]

@@ -61,6 +61,14 @@ try:
         if prepTarea.getString("FEC_VO")=="":
             campos +=titulo_atributo("FEC_VO","UTD_PREPTAREA")
             faltaDatos= True
+        # Jefe de Trabajo OT
+        if mbo.getString("SUPERVISOR")=="":
+            campos +=titulo_atributo("SUPERVISOR","WORKORDER")
+            faltaDatos= True
+        # Jefe de Trabajo Alterno
+        if prepTarea.getString("SUPERVISOR_ALTERNO")=="":
+            campos +=titulo_atributo("SUPERVISOR_ALTERNO","UTD_PREPTAREA")
+            faltaDatos= True
         if faltaDatos:
             params=["No puede avanzar. Falta completar los siguientes datos: "+ campos ]
             errorkey = "UTD_GENERICException"

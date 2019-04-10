@@ -81,6 +81,14 @@ try:
         if prepTarea.getString("UNIDAD")=="":
             campos +=titulo_atributo("UNIDAD","UTD_PREPTAREA")
             faltaDatos= True
+        # Preparador 1.1
+        if prepTarea.getString("PREPARADOR11")=="":
+            campos +=titulo_atributo("PREPARADOR11","UTD_PREPTAREA")
+            faltaDatos= True   
+        # Metodo de Trabajo
+        if prepTarea.getString("MT_FRIOMT")=="" or prepTarea.getString("MT_FRIOBT")=="" or prepTarea.getString("MT_INTERVENCION")=="" or prepTarea.getString("MT_MEDICIONES")=="" or prepTarea.getString("MT_ENSAYOS")=="" or prepTarea.getString("MT_INSPECCIONES")=="" or prepTarea.getString("MT_REVISIONES")=="":
+            campos +="Método de Trabajo"
+            faltaDatos= True  
         # Campos Estapa 2
         # Fecha Preparación en preparación Campo
         if prepTarea.getString("FECPREPCAMPO")=="":
@@ -114,9 +122,17 @@ try:
         # Fecha validación oficina
         if prepTarea.getString("FEC_VO")=="":
             campos +=titulo_atributo("FEC_VO","UTD_PREPTAREA")
-            faltaDatos= True    
+            faltaDatos= True
+        # Jefe de Trabajo OT
+        if mbo.getString("SUPERVISOR")=="":
+            campos +=titulo_atributo("SUPERVISOR","UTD_PREPTAREA")
+            faltaDatos= True
+        # FJefe de Trabajo Alterno
+        if prepTarea.getString("SUPERVISOR_ALTERNO")=="":
+            campos +=titulo_atributo("SUPERVISOR_ALTERNO","UTD_PREPTAREA")
+            faltaDatos= True
         if faltaDatos:
-            params=["No puede avanzar. Falta completar los siguientes datos: "+ campos ]
+            params=["No puede avanzar. Falta completar los siguientes datos: "+campos ]
             errorkey = "UTD_GENERICException"
             errorgroup = "UTD_GENERICException"
             error = True    

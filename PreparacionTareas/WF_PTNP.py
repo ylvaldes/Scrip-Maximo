@@ -115,7 +115,7 @@ try:
 except (MXException, MXApplicationException, RemoteException, Exception), e:
     logger.error("Error: Scrip Preparaci\xf3n de tareas Programadas")
     logger.error(e)
-    params=["Ocurrio un error a la hora de procesar el Script Preparaci\xf3n de Tareas \n" + str(e.getMessage())]
+    params=["Ocurrio un error a la hora de procesar el Script Preparación de Tareas \n" + str(e.getMessage())]
     errorkey = "UTD_GENERICException"
     errorgroup = "UTD_GENERICException"
     error = True
